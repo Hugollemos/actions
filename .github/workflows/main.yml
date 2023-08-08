@@ -1,4 +1,5 @@
-on: [push]
+on:
+  push:
 
 jobs:
   hello_world_job:
@@ -8,20 +9,22 @@ jobs:
         node-version: [18.x]
     name: A job to say hello
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      
-      - name: install dependecy
-        run: npm i
-        
-      - name: hugollemos/actions@v1
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run hugollemos/actions@v1
         id: hello
         uses: hugollemos/actions@v1
         with:
           hugo: 'aqui ho'
-      # Use the output from the `hello` step
-      - name: Get the api
-        run: echo " ${{ steps.hello.response }}"
+          
+      - name: Get the API response
+        run: echo "API response ${{ steps.hello.outputs.response }}"
