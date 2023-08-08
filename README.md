@@ -4,20 +4,29 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 ## Inputs
 
-### `who-to-greet`
+### `owner`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** nome da pessoa ou org publica `"World"`.
+
+## repo
+
+### `api`
+
+**Required** nome do repositorio `"World"`.
 
 ## Outputs
 
-### `time`
+### `api`
 
-The time we greeted you.
+Pegando os dados do github por API
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
-with:
-  who-to-greet: 'Mona the Octocat'
+- name: hugollemos/actions@v1
+        id: hello
+        uses: hugollemos/actions@v1
+        with:
+          owner: 
+          repo: 
 ```
