@@ -1,15 +1,21 @@
+const { Octokit } = require('@octokit/rest');
 const core = require('@actions/core');
-const github = require('@actions/github');
+const fetch = require('node-fetch/lib/index.js');
 
-try {
-  // `who-to-greet` input defined in action metadata file
-  const hugo = core.getInput('hugo');
-  console.log(`Hello ${hugo}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
-} catch (error) {
-  core.setFailed(error.message);
-}
+
+const octokit = new Octokit({
+  request: {
+    fetch: fetch
+  }
+});
+const hugo = core.getInput('hugo');
+console.log(`Hellolo ${hugo}!`);
+// Realize a consulta à API
+octokit.repos.get({
+  owner: 'hugollemos',
+  repo: 'actions'
+}).then(response => {
+  console.log(response.data);
+}).catch(error => {
+  console.error('Ocorreu um erro:', error);
+});
