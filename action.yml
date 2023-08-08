@@ -4,11 +4,12 @@ inputs:
   owner:  # id of input
     description: 'nome da pessoa.org'
     required: true
-    default: funcionando
+    default: ""
+  
   repo:  # id of input
     description: 'nome do repositorio'
     required: true
-    
+
 outputs:
   time: # id of output
     description: 'saida da api'
