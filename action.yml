@@ -2,7 +2,7 @@ name: 'consumo de api'
 description: 'Greet someone and record the time'
 inputs:
   hugo:  # id of input
-    description: 'pegando minha api'
+    description: 'pegando minha apii'
     required: true
 outputs:
   time: # id of output

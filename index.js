@@ -9,7 +9,7 @@ const octokit = new Octokit({
   }
 });
 const hugo = core.getInput('hugo');
-console.log(` ${hugo}!`);
+console.log(` index aqui ${hugo}!`);
 // Realize a consulta à API
 octokit.repos.get({
   owner: 'hugollemos',
