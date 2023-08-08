@@ -6,13 +6,13 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 ### `owner`
 
-**Required** nome da pessoa ou org publica `"World"`.
+**Required** nome da pessoa ou org publica 
 
 ## repo
 
 ### `api`
 
-**Required** nome do repositorio `"World"`.
+**Required** nome do repositorio 
 
 ## Outputs
 
