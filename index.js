@@ -1,14 +1,14 @@
 const { Octokit } = require('@octokit/rest');
 const core = require('@actions/core');
 const fetch = require('node-fetch').default;
-const hugo = core.getInput('hugo');
+
 
 const octokit = new Octokit({
   request: {
     fetch: fetch
   }
 });
-
+const hugo = core.getInput('hugo');
 console.log(`Hellolo ${hugo}!`);
 // Realize a consulta à API
 octokit.repos.get({

@@ -10830,14 +10830,14 @@ var __webpack_exports__ = {};
 const { Octokit } = __nccwpck_require__(7276);
 const core = __nccwpck_require__(6024);
 const fetch = (__nccwpck_require__(2460)["default"]);
-const hugo = core.getInput('hugo');
+
 
 const octokit = new Octokit({
   request: {
     fetch: fetch
   }
 });
-
+const hugo = core.getInput('hugo');
 console.log(`Hellolo ${hugo}!`);
 // Realize a consulta à API
 octokit.repos.get({
