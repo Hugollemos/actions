@@ -10837,12 +10837,14 @@ const octokit = new Octokit({
     fetch: fetch
   }
 });
-const hugo = core.getInput('hugo');
-console.log(` index aqui ${hugo}!`);
+const owner = core.getInput('owner');
+const repo = core.getInput('repo');
+
+
 // Realize a consulta à API
 octokit.repos.get({
-  owner: 'hugollemos',
-  repo: 'actions'
+  owner: 'lucasdoourado',
+  repo: 'cypress-automation-framework'
 }).then(response => {
   console.log(response.data);
 }).catch(error => {

@@ -1,12 +1,16 @@
 name: 'consumo de api'
 description: 'Greet someone and record the time'
 inputs:
-  hugo:  # id of input
-    description: 'pegando minha apii'
+  owner:  # id of input
+    description: 'nome da pessoa.org'
     required: true
+  repo:  # id of input
+    description: 'nome do repositorio'
+    required: true
+
 outputs:
   time: # id of output
-    description: 'saida da minha api'
+    description: 'saida da api'
 runs:
   using: 'node16'
   main: 'dist/index.js'

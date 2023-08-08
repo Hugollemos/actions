@@ -18,15 +18,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: |
-          npm cache clean --force
-          npm install
+        run: npm install
 
-      - name: Run hugollemos/actions@v1
+      - name: hugollemos/actions@v1
         id: hello
         uses: hugollemos/actions@v1
         with:
-          hugo: 'aqui ho'
+          owner: lucasdoourado
+          repo: cypress-automation-framework
           
       - name: Get the API response
         run: echo "API response ${{ steps.hello.outputs.response }}"
