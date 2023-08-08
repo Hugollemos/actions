@@ -1,7 +1,6 @@
 const { Octokit } = require('@octokit/rest');
 const core = require('@actions/core');
-const fetch = require('node-fetch/lib/index.js');
-
+const fetch = require('node-fetch').default;
 
 const octokit = new Octokit({
   request: {
